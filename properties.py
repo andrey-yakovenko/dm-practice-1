@@ -1,6 +1,10 @@
 import pandas as pd
 
+# Each function (2-10) returns an answer message (True or False, and an explanation if needed)
+# Each function (11-12) returns a matrix of the respective relation calculated
 
+
+# 2. Build a Python function CompleteCheck testing if a binary relation is complete.
 def complete_check(nodes, edges):
     flag, msg = True, ''
     for node_one in nodes:
@@ -15,6 +19,7 @@ def complete_check(nodes, edges):
     return str(flag)+msg
 
 
+# 3. Build a Python function ReflexiveCheck testing if a binary relation is reflexive.
 def reflexive_check(nodes, edges):
     flag, msg = True, ''
     for node in nodes:
@@ -25,6 +30,7 @@ def reflexive_check(nodes, edges):
     return str(flag)+msg
 
 
+# 4. Build a Python function AsymmetricCheck testing if a binary relation is asymmetric.
 def asymmetric_check(nodes, edges):
     flag, msg = True, ''
     for node_one in nodes:
@@ -38,6 +44,7 @@ def asymmetric_check(nodes, edges):
     return str(flag)+msg
 
 
+# 5. Build a Python function SymmetricCheck testing if a binary relation is symmetric.
 def symmetric_check(nodes, edges):
     flag, msg = True, ''
     for node_one in nodes:
@@ -50,6 +57,7 @@ def symmetric_check(nodes, edges):
     return str(flag)+msg
 
 
+# 6. Build a Python function AntisymmetricCheck testing if a binary relation is antisymmetric.
 def antisymmetric_check(nodes, edges):
     flag, msg = True, ''
     for node_one in nodes:
@@ -63,6 +71,7 @@ def antisymmetric_check(nodes, edges):
     return str(flag)+msg
 
 
+# 7. Build a Python function TransitiveCheck testing if a binary relation is transitive.
 def transitive_check(nodes, edges):
     flag, msg = True, ''
     for node_one in nodes:
@@ -78,6 +87,7 @@ def transitive_check(nodes, edges):
     return str(flag)+msg
 
 
+# 8. Build a Python function NegativetransitiveCheck testing if a binary relation is negative transitive.
 def negatively_transitive_check(nodes, edges):
     flag, msg = True, ''
     for node_one in nodes:
@@ -93,6 +103,7 @@ def negatively_transitive_check(nodes, edges):
     return str(flag)+msg
 
 
+# 9. Build a Python function CompleteOrderCheck testing if a binary relation is a complete order.
 def complete_order_check(nodes, edges):
     flag, msg = True, ': the binary relation R is complete, antisymmetric, and transitive'
     complete_result = complete_check(nodes, edges)[0]
@@ -110,6 +121,7 @@ def complete_order_check(nodes, edges):
     return str(flag) + msg
 
 
+# 10. Build a Python function CompletePreOrderCheck testing if a binary relation is a complete pre-order.
 def complete_preorder_check(nodes, edges):
     flag, msg = True, ': the binary relation R is complete and transitive'
     complete_result = complete_check(nodes, edges)[0]
@@ -124,6 +136,7 @@ def complete_preorder_check(nodes, edges):
     return str(flag) + msg
 
 
+# 11. Build a Python function StrictRelation returning the strict relation part of a binary relation.
 def strict_relation(nodes, edges):
     strict_matrix = pd.DataFrame(index=nodes, columns=nodes)
     for node_one in nodes:
@@ -140,6 +153,7 @@ def strict_relation(nodes, edges):
     return strict_matrix
 
 
+# 12. Build a Python function IndifferenceRelation returning the indifference relation part of a binary relation.
 def indifference_relation(nodes, edges):
     indifference_matrix = pd.DataFrame(index=nodes, columns=nodes)
     for node_one in nodes:
